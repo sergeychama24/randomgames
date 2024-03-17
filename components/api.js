@@ -15,3 +15,7 @@ function request(endpoint, id) {
 export const getGameByIdRequest = (id) => {
   return request('games/', id);
 };
+
+export const getScreenshotsByIdRequest = (id) => {
+  return request(`games/${id}/screenshots`, '');
+};
