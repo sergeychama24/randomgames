@@ -1,0 +1,28 @@
+@import url('./public/fonts/fonts.css');
+@import url('./public/vendor/resset.css');
+
+.body {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fbfbfb;
+}
+
+.nav {
+  max-inline-size: 1440px;
+  padding-inline: 16px;
+  padding-block: 8px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #0061fc;
+  text-transform: uppercase;
+}
+
+.hero {
+  max-height: 376px;
+  width: 100%;
+}
