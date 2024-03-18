@@ -10,6 +10,8 @@ const gameMainGenre = document.querySelector('.hero__genre--short');
 const gameScore = document.querySelector('.hero__score');
 const screenshots = document.querySelectorAll('.screenshot');
 const gameGenres = document.querySelector('.genres__list');
+const description = document.querySelector('.description');
+const released = document.querySelector('.released');
 
 const initialGame = (gameId) => {
   getGameByIdRequest(gameId).then((data) => {
@@ -18,6 +20,17 @@ const initialGame = (gameId) => {
     gameScore.textContent = data.metacritic;
     gameCover.src = data.background_image;
     gameCover.alt = data.name;
+
+    const gameDescriptionText = document.createElement('p');
+    gameDescriptionText.classList.add('description__text');
+    gameDescriptionText.textContent = data.description_raw;
+    description.append(gameDescriptionText);
+
+    const gameReleasedText = document.createElement('p');
+    gameReleasedText.classList.add('released__text');
+    gameReleasedText.textContent = data.released;
+    released.append(gameReleasedText);
+
     data.genres.forEach((genre) => {
       const gameGenre = document.createElement('li');
       gameGenre.classList.add('genres__list-item');
@@ -36,6 +49,6 @@ const initialGame = (gameId) => {
   });
 };
 
-initialGame('far-cry-5');
+initialGame('the-legend-of-zelda-breath-of-the-wild');
 
 console.log(screenshots);
